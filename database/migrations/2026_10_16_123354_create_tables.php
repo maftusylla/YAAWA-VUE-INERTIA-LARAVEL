@@ -39,7 +39,7 @@ return new class extends Migration
             $table->string('image',2048);
             $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('sale_price')->nullable();
-            $table->unsigned('stock')->default(0);
+            $table->unsignedInteger('stock')->default(0);
             $table->unsignedInteger('version')->default(1);
             $table->boolean('active')->default(true);
             $table->boolean('featured')->default(false);

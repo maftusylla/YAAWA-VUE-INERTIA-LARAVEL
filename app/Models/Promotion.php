@@ -9,6 +9,19 @@ class Promotion extends Model
 
     protected $table ='promotions';
     protected $fillable = [
+            'code',
+            'percentage',
+            'active',
+            'expires_at',
 
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'percentage' => 'integer',
+            'active' => 'boolean',
+            'expires_at' => 'datetime',
+        ];
+    }
 }

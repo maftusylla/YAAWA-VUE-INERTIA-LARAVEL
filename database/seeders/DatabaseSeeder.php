@@ -2,14 +2,14 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use App\Models\Categorie;
+use App\Models\Category;
 use App\Models\DeliveryZone;
-use App\Models\OrderItem;
-use App\Models\Promotion;
-use App\Models\Product;
 use App\Models\Order;
+use App\Models\OrderItem;
+use App\Models\Product;
+use App\Models\Promotion;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     {
             User::query()->updateOrCreate(
                 ['email' => 'mamefatou@yaawa.com'],
-                ['name' => 'mame', 'password' => Hash::make('root'), 'is_admin' => true],
+                ['name' => 'fatou', 'password' => Hash::make('root'), 'is_admin' => true],
             );
 
         $categories = [
@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($categories as $category) {
-            Categorie::query()->updateOrCreate(['id' => $category['id']], $category);
+            Category::query()->updateOrCreate(['id' => $category['id']], $category);
         }
 
         $products = [
